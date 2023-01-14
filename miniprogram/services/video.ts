@@ -9,3 +9,31 @@ export function getTopMV(offset = 0, limit = 20){
         }
     })
 }
+
+
+export function getMVUrl(id: number) {
+  return MRequest.get({
+    url: "/mv/url",
+    data: {
+      id
+    }
+  })
+}
+
+export function getMVInfo(mvid: number) {
+  return MRequest.get({
+    url: "/mv/detail",
+    data: {
+      mvid
+    }
+  })
+}
+
+export function getMVRelated(id: number) {
+  return MRequest.get({
+    url: "/related/allvideo",
+    data: {
+      id
+    }
+  })
+}
