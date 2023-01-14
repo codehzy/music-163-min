@@ -1,4 +1,4 @@
-// pages/main-music/main-music.js
+// pages/detail-search/detail-search.ts
 Page({
 
   /**
@@ -11,7 +11,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  onLoad() {
 
   },
 

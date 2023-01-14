@@ -1,3 +1,8 @@
+import { getMusicBanner } from "../../services/music"
+import querySelect from "../../utils/query-select"
+import {throttle } from "underscore"
+
+const querySelectorThrottle = throttle(querySelect, 1000)
 // pages/main-music/main-music.ts
 Page({
 
@@ -5,14 +10,42 @@ Page({
    * 页面的初始数据
    */
   data: {
+    searchValue: '',
+    bannerList: [],
+    bannerHeight: 375,
+  },
 
+  onRecommendMoreClick() {
+    console.log("onRecommendMoreClick");
+  },
+
+  onSearchClick() {
+    wx.navigateTo({
+      url: '/pages/detail-search/detail-search',
+    })
+  },
+
+  async fetchMusicBanner() {
+    const {banners}= await getMusicBanner()    
+    
+    this.setData({
+      bannerList: banners
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    this.fetchMusicBanner()
+  },
 
+ async onBannerImageLoad(e: WechatMiniprogram.Event) {
+   const res = await querySelectorThrottle(".banner-image")
+   this.setData({
+    bannerHeight: res[0].height
+   })
+   
   },
 
   /**

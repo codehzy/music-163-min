@@ -1,2 +1,22 @@
-<!--pages/main-music/main-music.wxml-->
-<text>pages/main-music/main-music.wxml</text>
+<!-- pages/main-music/main-music.wxml -->
+<van-search value="{{ searchValue }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" bind:click-input="onSearchClick" />
+<!-- 2.轮播图展示 -->
+<swiper class="banner" circular autoplay indicator-dots duration="500" style="height: {{bannerHeight}}px;">
+  <block wx:for="{{ bannerList }}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="banner-image" src="{{ item.imageUrl }}" mode="widthFix" bindload="onBannerImageLoad" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 3. 推荐歌单的展示 -->
+<view class="recommend">
+  <area-header title="推荐歌曲" bind:moreClick="onRecommendMoreClick" />
+</view>
+
+
+<!-- 4. 排行榜的展示 -->
+<view class="ranking">
+
+  <area-header title="巅峰榜" hasMore="{{false}}" />
+</view>
