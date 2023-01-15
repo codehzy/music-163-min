@@ -2,7 +2,6 @@
     <view class="title">{{title}}</view>
     <view class="more" bindtap="onMoreTap" wx:if="{{hasMore}}">
         <view class="more-text">更多</view>
-        <van-icon name="arrow" />
+        <van-icon size="16" name="arrow" />
     </view>
-
 </view>
