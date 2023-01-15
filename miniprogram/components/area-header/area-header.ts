@@ -24,6 +24,7 @@ Component({
    */
   methods: {
     onMoreTap() {
+      // @ts-ignore
       this.triggerEvent("moreClick");
     },
   },

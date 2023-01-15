@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "song-item-next": "/components/song-item-next/song-item-next",
+    "menu-header": "/components/menu-header/menu-header"
+  }
+}
