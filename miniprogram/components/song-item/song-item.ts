@@ -22,6 +22,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onSongItemTap(){
+      // @ts-ignore
+      const id = this.properties.itemData.id
+      wx.navigateTo({
+        url: `/pages/music-player/music-player?id=${id}`
+      })
+    }
 
   },
 

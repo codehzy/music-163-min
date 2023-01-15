@@ -14,6 +14,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "播放器",
+          "pathName": "pages/music-player/music-player",
+          "query": "id=1951069525",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "歌曲播放",
+          "pathName": "pages/music-player/music-player",
+          "query": "id=1383023894",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
