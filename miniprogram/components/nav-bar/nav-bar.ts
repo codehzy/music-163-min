@@ -23,15 +23,10 @@ Component({
   data: {
     statusHeight: 20,
   },
-  setStatusHeight() {
-    this.setData({ statusHeight: app.globalData.statusHeight });
-  },
-
   lifetimes: {
     attached() {
-      // 在组件实例进入页面节点树时执行
       // @ts-ignore
-      this.setStatusHeight();
+      this.setData({ statusHeight: app.globalData.statusHeight })
     },
   },
 

@@ -1,4 +1,5 @@
 // components/menu-area/menu-area.ts
+// @ts-ignore
 const app = getApp();
 Component({
   /**
